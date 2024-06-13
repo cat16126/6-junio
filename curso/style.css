@@ -1,12 +1,12 @@
-/* Make the header take up the full width and position it on top of the carousel */
+/* Hacer el header tomar toda la anchura y posicionarlo encima del carousel */
 header {
     position: absolute;
     top: 0;
     width: 100%;
-    z-index: 10; /* Ensures the header is on top of other elements */
+    z-index: 10;
 }
 
-/* Make the nav transparent and style it appropriately */
+/* Estilos para el nav */
 header nav {
     display: flex;
     flex-direction: row;
@@ -16,15 +16,7 @@ header nav {
     font-family: "Poppins", sans-serif;
     font-weight: 400;
     font-style: normal;
-    padding: 10px 0; /* Adds some padding for better appearance */
-}
-
-/* Ensure the header elements are centered and styled correctly */
-header div {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: 100%;
+    padding: 10px 0;
 }
 
 header ul {
@@ -32,62 +24,77 @@ header ul {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    margin: 0;
+    padding: 0;
 }
 
 header ul li {
     margin: 10px;
-    justify-content: space-evenly;
 }
 
-/* Other existing styles */
+/* Otros estilos existentes */
 img {
-    width: 300px;
+    max-width: 100%;
+    height: auto;
 }
 
-h1 {
-    font-size: 24px;
-    color: blueviolet;
-    font-family: 'Times New Roman', Times, serif;
-}
-
-p {
-    font-size: 16px;
-    color: rgb(134, 11, 22);
-    font-family: 'Times New Roman', Times, serif;
-}
-
+/* Estilos para el contenido */
 .contenedor {
     display: flex;
-    flex-direction: row;
-    width: 100%;
-    margin: 10px 0 10px 0;
-    background-color: blue;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 10px 0;
+}
+
+.caja {
+    width: 300px;
+    padding: 10px;
+    text-align: center;
 }
 
 .links {
     display: flex;
-    flex-direction: row;
-}
-
-.caja {
-    width: 100%;
-    height: 100%;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 10px 0;
 }
 
 #nosotros iframe {
-    padding: 10px;
-    margin: 10px;
+    width: 100%;
 }
 
-a:link{
+/* Estilos para los enlaces */
+a:link, a:hover {
     color: beige;
+    text-decoration: none;
 }
 
-a:hover{
+a:hover {
     color: brown;
+}
+
+/* Estilos para pantallas más pequeñas (por ejemplo, dispositivos móviles) */
+@media (max-width: 768px) {
+    header nav {
+        flex-direction: column;
+    }
+
+    header ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header ul li {
+        margin: 5px 0;
+    }
+
+    .contenedor, .links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .caja {
+        width: 90%;
+        margin-bottom: 20px;
+    }
 }
